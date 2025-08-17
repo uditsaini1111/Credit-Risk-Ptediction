@@ -28,4 +28,23 @@ with st.form("user_input_form"):
 
     submitted = st.form_submit_button("Predict")
 
+if submitted:
+    input_df = pd.DataFrame({
+        "Age": [age],
+        "Sex": [sex],
+        "Job": [job],
+        "Housing": [housing],
+        "Saving accounts": [saving],
+        "Checking account": [checking],
+        "Credit amount": [credit_amount],
+        "Duration": [duration],
+        "Purpose": [purpose]
+    })
+
+    prediction = model.predict(input_df)[0]
+
+    if prediction == 0:
+        st.success("✅ You are likely to get the loan.")
+    else:
+        st.error("❌ You may not get the loan.")
 
