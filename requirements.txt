@@ -1,7 +1,7 @@
-scikit-learn>=0.24
+scikit-learn>=1.0
+imbalanced-learn
 xgboost
 pandas
 numpy
 matplotlib
 streamlit
-imbleran
