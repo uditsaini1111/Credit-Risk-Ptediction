@@ -4,7 +4,7 @@ import pandas as pd
 from sklearn.inspection import permutation_importance
 import matplotlib.pyplot as plt
 
-
+preprocessor = pickle.load(open("preprocessor_creditrisk.pkl", "rb"))
 model = pickle.load(open("CreditRisk_prediction.pkl", "rb"))
 
 st.set_page_config(page_title="Credit Risk Prediction", layout="centered")
@@ -27,4 +27,5 @@ with st.form("user_input_form"):
     purpose = st.selectbox("Purpose", ["car", "furniture/equipment", "radio/TV", "education", "business", "domestic appliances", "repairs", "vacation/others"])
 
     submitted = st.form_submit_button("Predict")
+
 
