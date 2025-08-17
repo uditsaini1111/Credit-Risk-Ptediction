@@ -40,11 +40,13 @@ if submitted:
         "Duration": [duration],
         "Purpose": [purpose]
     })
+    X = preprocessor.transform(input_df)
 
-    prediction = model.predict(input_df)[0]
+    prediction = model.predict(X)[0]
 
     if prediction == 0:
         st.success("✅ You are likely to get the loan.")
     else:
         st.error("❌ You may not get the loan.")
+
 
